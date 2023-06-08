@@ -1,0 +1,5 @@
+/etc/nginx/mime.types
+/etc/nginx/conf.d/dev2.conf
+/etc/nginx/conf.d/dev0.conf
+/etc/nginx/conf.d/dev1.conf
+/etc/nginx/nginx.conf

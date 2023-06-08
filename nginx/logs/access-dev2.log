@@ -1,0 +1,6 @@
+179.184.51.59 - - [11/Dec/2020:02:30:26 +0000] "GET / HTTP/1.1" 200 56 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:83.0) Gecko/20100101 Firefox/83.0"
+179.184.51.59 - - [11/Dec/2020:02:30:27 +0000] "GET /favicon.ico HTTP/1.1" 200 56 "http://dev2.uware.com.br/" "Mozilla/5.0 (X11; Linux x86_64; rv:83.0) Gecko/20100101 Firefox/83.0"
+179.184.51.59 - - [11/Dec/2020:02:30:33 +0000] "GET /info.php HTTP/1.1" 200 22947 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:83.0) Gecko/20100101 Firefox/83.0"
+179.184.51.59 - - [11/Dec/2020:02:33:20 +0000] "GET /info.php HTTP/1.1" 200 22967 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:83.0) Gecko/20100101 Firefox/83.0"
+179.184.51.59 - - [11/Dec/2020:03:12:50 +0000] "GET /info.php HTTP/1.1" 200 22969 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:83.0) Gecko/20100101 Firefox/83.0"
+179.184.51.59 - - [11/Dec/2020:03:25:26 +0000] "GET /info.php HTTP/1.1" 200 22970 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:83.0) Gecko/20100101 Firefox/83.0"

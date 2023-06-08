@@ -1,0 +1,32 @@
+server {rewrite ^(/.well-known/acme-challenge/.*) $1 break; # managed by Certbot
+
+
+    listen 80;
+    root /srv/http/dev0;
+    index index.php index.html index.htm;
+    server_name dev0.uware.com.br;
+    location / {
+         try_files $uri $uri/ /index.php?$args;
+    }
+    location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass php8-fpm:9000;
+        fastcgi_index index.php;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param PATH_INFO $fastcgi_path_info;
+    }
+    # Log do server
+    error_log /var/log/nginx/error-dev0.log;
+    access_log  /var/log/nginx/access-dev0.log;
+location = /.well-known/acme-challenge/1wUY_LCMNFAEij4INgZj6cYTWqcT4uhwYXh5X45Yze8{default_type text/plain;return 200 1wUY_LCMNFAEij4INgZj6cYTWqcT4uhwYXh5X45Yze8.UCQcy8nCCc2rEuDPOPd4hqJcksnV5g26MBlre30BFi4;} # managed by Certbot
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/dev0.uware.com.br/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/dev0.uware.com.br/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}

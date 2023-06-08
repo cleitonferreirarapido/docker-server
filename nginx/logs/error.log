@@ -1,0 +1,5 @@
+2020/12/11 01:04:57 [emerg] 1#1: "fastcgi_index" directive is duplicate in /etc/nginx/conf.d/dev0.conf:12
+2020/12/11 01:07:25 [emerg] 1#1: "fastcgi_index" directive is duplicate in /etc/nginx/conf.d/dev0.conf:12
+2020/12/11 03:18:15 [notice] 35#35: signal process started
+2020/12/11 03:24:30 [notice] 35#35: signal process started
+2020/12/11 03:24:31 [notice] 42#42: signal process started
