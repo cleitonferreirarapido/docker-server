@@ -14,32 +14,27 @@ services:
       - ./nginx/letsencrypt/etc:/etc/letsencrypt
       - ./nginx/letsencrypt/lib:/var/lib/letsencrypt
     links:
+      - php8-fpm
       - php7-fpm
+      - php5-fpm
       - mariadb-master
+  php8-fpm:
+    image: php:8.0-fpm
+    volumes:
+      - ./nginx-public:/srv/http
   php7-fpm:
-    image: entregas/php:7.4-fpm
-    build: ./build/php7-fpm
+    image: php:7.4-fpm
+    volumes:
+      - ./nginx-public:/srv/http
+  php5-fpm:
+    image: php:5.6-fpm
     volumes:
       - ./nginx-public:/srv/http
   mariadb-master:
     image: mariadb:10.5
     container_name: mariadb
     restart: 'on-failure'
-    ports:
-      - "2191:3306"
     environment:
-       MYSQL_ROOT_PASSWORD: ent22kw25BR!
+       MYSQL_ROOT_PASSWORD: Uware!Db2Docker
     volumes:
        - ./mariadb/master:/var/lib/mysql
-  ftp:
-    image: stilliard/pure-ftpd:hardened
-    volumes:
-      - ./ftp:/home/ftpusers/ftp
-    ports:
-      - "2121:21"
-    environment:
-      - PUBLICHOST=159.89.126.153
-      - FTP_USER_NAME=root
-      - FTP_USER_PASS=ent22kw25BR!
-      - FTP_USER_HOME=/home/ftpusers/ftp
-      - FTP_PASSIVE_PORTS=30000:30009
